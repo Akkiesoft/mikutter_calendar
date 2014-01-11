@@ -23,3 +23,7 @@ TODO
 連絡先
 ---
 [@Akkiesoft](https://www.twitter.com/Akkiesoft)まで。
+
+その他
+---
++ タブのアイコンは[iconmonstr.com](http://iconmonstr.com)のアイコンを利用しました
