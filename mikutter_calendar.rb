@@ -68,6 +68,11 @@ Plugin.create :mikutter_calendar do
       end
       todaylist = Array.new()
       @schedule.each do |event|
+        if event.st.class != Time then
+          # たまにTimeが記録されていないイベントがいるのでそれを除外
+          # (招待未確認のもの？)
+          next
+        end
         date = event.st.localtime.strftime("%Y%m%d")
         if date == selected then
           stime = event.st.strftime("%H:%M")
@@ -119,7 +124,7 @@ Plugin.create :mikutter_calendar do
     boolean("このカレンダーは一般公開ではない", :m_cl_private)
       settings "認証情報" do
         input("Googleアカウント",:m_cl_mail)
-        input("パスワード",:m_cl_pass)
+        inputpass("パスワード",:m_cl_pass)
       end
   end
     
